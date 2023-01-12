@@ -1,0 +1,8 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/jagadeesh/realsence_ws/devel/lib/python3/dist-packages",
+        "/home/jagadeesh/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "/home/jagadeesh/Jagadeesh/git/anti_drone/pursuit_drone_controller/ardupilot/pymavlink/zebu_mavlink"
+    ]
+}
