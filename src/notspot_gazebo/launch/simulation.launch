@@ -2,7 +2,7 @@
 
     <!-- Empty World -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-      <arg name="world_name" value="$(find notspot_gazebo)/launch/world/normal.world"/>
+      <arg name="world_name" value="$(find notspot_gazebo)/launch/world/iris.world"/>
       <arg name="use_sim_time" value="true"/>
     </include>
 
@@ -17,7 +17,9 @@
           args="FR1_joint FR2_joint FR3_joint
                 FL1_joint FL2_joint FL3_joint
                 RR1_joint RR2_joint RR3_joint
-                RL1_joint RL2_joint RL3_joint"/>
+                RL1_joint RL2_joint RL3_joint
+                joint1 joint2 joint3 joint4
+                joint5 joint6"/>
 
     <!-- Robot State Publisher -->
     <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher" respawn="false" output="screen">

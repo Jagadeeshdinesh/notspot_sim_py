@@ -67,4 +67,33 @@ notspot_controller:
       type: effort_controllers/JointPositionController
       joint: RL3_joint
       pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
-        
+
+  joint1:
+      type: effort_controllers/JointPositionController
+      joint: joint1
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  joint2:
+      type: effort_controllers/JointPositionController
+      joint: joint2
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  joint3:
+      type: effort_controllers/JointPositionController
+      joint: joint3
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  joint4:
+      type: effort_controllers/JointPositionController
+      joint: joint4
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  joint5:
+      type: effort_controllers/JointPositionController
+      joint: gripper
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
+
+  joint6:
+      type: effort_controllers/JointPositionController
+      joint: gripper_sub
+      pid: {p: 9, i: 0.03, d: 0.3055, i_clamp_min:  -1000, i_clamp_max: 1000}
