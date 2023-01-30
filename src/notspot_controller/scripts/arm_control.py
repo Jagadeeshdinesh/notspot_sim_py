@@ -14,98 +14,28 @@ def talker():
                   "/notspot_controller/joint6/command"]
     
     rate = rospy.Rate(5) # 10hz
+    waypoint= [[-1.57, -1.7, 1.3, 1.0, 2.0, 2.0],
+               [-1.57, -1.7, 1.3, 0.0, 2.0, 2.0],
+               [-1.57, 1.0, 0.0, 0.5, 2.0, 2.0],
+               [-1.57, 1.0, 0.0, 0.5, -1.0, -1.0],
+               [-1.57, 0.3, 0.0, 0.5, -1.0, -1.0],
+               [1.57, 0.0, 0.0, 0.40, -1.0, -1.0],
+               [1.57, 0.0, 0.0, 0.9, 1.0, 1.0],
+               [1.57, 0.0, 0.0, 0.2, -1.0, -1.0],
+               [-1.57, 0.0, 0.0, 0.2, -1.0, -1.0],
+               [-1.57, -1.0, 0.8, 1.0, -1.0, -1.0],
+               [-1.57, -1.7, 1.3, 1.0, -1.0, -1.0]
+               ]
 
-    position = [-1.57, -1.7, 1.3, 1.0, 2.0, 2.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-        rospy.sleep(0.4)  
-
-    position = [-1.57, -1.7, 1.3, 0.0, 2.0, 2.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4) 
-
-    position = [-1.57, 1.0, 0.0, 0.5, 01.0, 01.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4)  
-
-    position = [-1.57, 1.0, 0.0, 0.5, -1.0, -1.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4)  
-
-    position = [-1.57, 1.0, 0.0, 0.0, -1.0, -1.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4) 
-
-    position = [-1.57, 1.0, -1.0, 0.0, -1.0, -1.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4) 
-
-    position = [1.57, 0.3, 0.0, 0.0, -1.0, -1.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4) 
-
-    position = [1.57, 0.3, 0.0, 0.90, -1.0, -1.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4) 
-
-    position = [1.57, 0.3, 0.0, 0.90, 0.0, 0.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4) 
-
-    position = [1.57, 0.0, 0.0, 0.90, 0.0, 0.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4) 
-
-    position = [-1.57, -1.7, 1.3, 1.0, 2.0, 2.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-        rospy.sleep(0.4)
+    for j in range (len(waypoint)):
+        for i in range(len(command_topics)):
+            pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
+            rospy.loginfo(waypoint[j][i])
+            pub.publish(waypoint[j][i])
+            rate.sleep()
+            rospy.sleep(0.2)  
+        rospy.sleep(0.3)  
 
 if __name__ == '__main__':
     talker()
-    # try:
-    #     talker()
-    # except rospy.ROSInterruptException:
-    #     pass
+    
