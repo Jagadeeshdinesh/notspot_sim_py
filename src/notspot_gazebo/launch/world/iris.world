@@ -21,7 +21,7 @@
           <contact_surface_layer>0.0</contact_surface_layer>
         </constraints>
       </ode>
-      <real_time_update_rate>-1</real_time_update_rate>
+      <real_time_update_rate>1000</real_time_update_rate>
       <!--<max_step_size>0.0020</max_step_size>-->
     </physics>
     <gravity>0 0 -9.8</gravity>
@@ -42,72 +42,29 @@
           <surface>
             <friction>
               <ode>
-                <mu>100</mu>
+                <mu1>100</mu1>
                 <mu2>50</mu2>
               </ode>
             </friction>
           </surface>
         </collision>
         <visual name="runway">
-          <pose>000 0 0.005 0 0 0</pose>
+          <pose>000 0 0.00 0 0 0</pose>
           <cast_shadows>false</cast_shadows>
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>1829 45</size>
+              <size>500 45</size>
             </plane>
           </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Runway</name>
-            </script>
-          </material>
-        </visual>
-
-        <visual name="Plane_ground">
-          <pose>500 45 0.004 0 0 0</pose>
-          <cast_shadows>false</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>45 45</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Road</name>
-            </script>
-          </material>
-        </visual>
-
-        <visual name="Plane_ground_1">
-          <pose>545 45 0.004 0 0 0</pose>
-          <cast_shadows>false</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>45 45</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Road</name>
-            </script>
-          </material>
-        </visual>
-
-        <visual name="runway_1">
-          <pose>0 45 0.004 0 0 0.70</pose>
-          <cast_shadows>false</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1829 45</size>
-            </plane>
-          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu1>100</mu1>
+                <mu2>100</mu2>
+              </ode>
+            </friction>
+          </surface>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>

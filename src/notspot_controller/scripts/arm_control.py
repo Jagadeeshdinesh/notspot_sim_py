@@ -47,7 +47,7 @@ def talker():
         rate.sleep()
     rospy.sleep(0.4)  
 
-    position = [-1.57, 1.0, 0.0, 0.0, -2.0, -2.0]
+    position = [-1.57, 1.0, 0.0, 0.0, -1.0, -1.0]
     for i in range(len(command_topics)):
         pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
         rospy.loginfo(position[i])
@@ -55,7 +55,7 @@ def talker():
         rate.sleep()
     rospy.sleep(0.4) 
 
-    position = [-1.57, 1.0, -1.0, 0.0, -2.0, -2.0]
+    position = [-1.57, 1.0, -1.0, 0.0, -1.0, -1.0]
     for i in range(len(command_topics)):
         pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
         rospy.loginfo(position[i])
@@ -63,7 +63,7 @@ def talker():
         rate.sleep()
     rospy.sleep(0.4) 
 
-    position = [1.57, 0.3, 0.0, 0.0, -2.0, -2.0]
+    position = [1.57, 0.3, 0.0, 0.0, -1.0, -1.0]
     for i in range(len(command_topics)):
         pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
         rospy.loginfo(position[i])
@@ -71,7 +71,7 @@ def talker():
         rate.sleep()
     rospy.sleep(0.4) 
 
-    position = [1.57, 0.3, 0.0, 0.90, -2.0, -2.0]
+    position = [1.57, 0.3, 0.0, 0.90, -1.0, -1.0]
     for i in range(len(command_topics)):
         pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
         rospy.loginfo(position[i])
@@ -102,32 +102,6 @@ def talker():
         pub.publish(position[i])
         rate.sleep()
         rospy.sleep(0.4)
-
-    while True:
-        print("done")
-        rospy.sleep(5)  
-
-    position = [0, -1.7, 1.3, 0.0, -2.0, -2.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.4) 
-
-    position = [0, -1.7, 1.3, 1.0, -2.0, -2.0]
-    for i in range(len(command_topics)):
-        pub = rospy.Publisher(command_topics[i], Float64, queue_size=10)
-        rospy.loginfo(position[i])
-        pub.publish(position[i])
-        rate.sleep()
-    rospy.sleep(0.2)  
-
-    # while not rospy.is_shutdown():
-    #     position = -0.5
-    #     rospy.loginfo(position)
-    #     pub.publish(position)
-    #     rate.sleep()
 
 if __name__ == '__main__':
     talker()
